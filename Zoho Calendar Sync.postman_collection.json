@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "6865ed65-55b6-49f8-bf83-c8719300083d",
+		"name": "Zoho Calendar Sync",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20455907"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/generate-token"
+			},
+			"response": []
+		},
+		{
+			"name": "Sync Approved Leaves",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "Viraj",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Shrestha",
+							"type": "text"
+						},
+						{
+							"key": "leavesFrom",
+							"value": "10-Apr-2024",
+							"type": "text"
+						},
+						{
+							"key": "leaveTo",
+							"value": "15-Apr-2024",
+							"type": "text"
+						},
+						{
+							"key": "leaveType",
+							"value": "Unpaid Leave",
+							"type": "text"
+						},
+						{
+							"key": "source",
+							"value": "proshore",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "{{baseUrl}}/zoho-calendar-sync"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000"
+		}
+	]
+}
