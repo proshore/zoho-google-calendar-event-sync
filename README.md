@@ -156,6 +156,20 @@ Upload the files to the server created
 Notice
 On PythonAnywhere, environment variables need to be explicitly set in your web app's configuration. You cannot use a .env file directly as you might do locally unless you explicitly load it within your application using a library like python-dotenv.
 
+## Contributors ✨
+
+Thanks go to these wonderful people
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+   <tbody>
+      <tr>
+         <td align="center" valign="top" width="14.28%"><a href="https://github.com/viraj-stha09"><img src="https://avatars.githubusercontent.com/u/54788834?v=4" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Viraj Kumar Shrestha</b></sub></a><br /></td>
+      </tr>
+   </tbody>
+</table>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
