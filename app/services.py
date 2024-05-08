@@ -6,13 +6,13 @@ from googleapiclient.discovery import build
 from pathlib import Path
 from app import app
 
-PROSHORE_CALENDAR_ID = ""
-DPL_CALENDAR_ID = ""
-DEFAULT_CALENDAR_ID = ""
-CALENDAR_SCOPE = ""
-REDIRECT_URI = ""
-CLIENT_SECRETS_FILE = ""
-TIMEZONE = ""
+PROSHORE_CALENDAR_ID = os.getenv("PROSHORE_CALENDAR_ID")
+DPL_CALENDAR_ID = os.getenv("DPL_CALENDAR_ID")
+DEFAULT_CALENDAR_ID = os.getenv("DEFAULT_CALENDAR_ID")
+CALENDAR_SCOPE = os.getenv("CALENDAR_SCOPE")
+REDIRECT_URI = os.getenv("REDIRECT_URI")
+CLIENT_SECRETS_FILE = os.getenv("CLIENT_SECRETS_FILE")
+TIMEZONE = os.getenv("TIMEZONE")
 
 
 def get_calendar_id(source):

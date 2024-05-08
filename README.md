@@ -67,12 +67,13 @@ To locally run the project, follow the step below
    ```sh
    git clone git@github.com:proshore/zoho-google-calandar-event-sync.git
    ```
-2. Run the docker compose command, this will install all the necessary dependency and runs the docker container.
+2. Copy the `.env.example` and create a new `.env` file and add the information that is required.
+
+3. Run the docker compose command, this will install all the necessary dependency and runs the docker container.
    ```sh
    docker-compose up
    ```
-3. Follow the url on the output terminal to access the application, Default url should be http://127.0.0.1:5000
-
+4. Follow the url on the output terminal to access the application, Default url should be http://127.0.0.1:5000
 
 ***
 ## Create credentials.json

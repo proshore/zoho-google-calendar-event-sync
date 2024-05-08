@@ -2,3 +2,4 @@
 /hr-token.json
 /credentials.json
 /.idea
+.env
