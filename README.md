@@ -48,6 +48,7 @@ Here's why the project is created:
 ### Built With
 [![Python]][Python-url]
 
+***
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -142,7 +143,7 @@ A post request with the following parameter must be sent to the url provided bel
 | leaveType      | String   | Yes      |                  |
 | source      | String   | No       | If not sent will take the default id from the service.py page |
 
-
+***
 <!-- USAGE EXAMPLES -->
 ## Deploy to PythonAnywhere
 
