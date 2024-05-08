@@ -157,8 +157,6 @@ Notice
 On PythonAnywhere, environment variables need to be explicitly set in your web app's configuration. You cannot use a .env file directly as you might do locally unless you explicitly load it within your application using a library like python-dotenv.
 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
