@@ -107,6 +107,8 @@ To authenticate end users and access user data in your app, you need to create o
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+The project also contains a postman collection in the root, that helps to understand the API properly. 
+
 ### Generate authentication token
 To generate the authentication token, Please visit the following link
 ````
