@@ -58,7 +58,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 For the project to run you will need to have the following:
-1. Requires `credentials.json` file. [Follow here for details](#create-credentials.json)
+1. Requires `credentials.json` file. [Follow here for details](#create-credentialsjson)
 
 ### Installation
 
