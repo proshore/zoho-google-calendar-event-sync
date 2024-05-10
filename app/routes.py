@@ -8,7 +8,7 @@ import git
 
 @app.route('/')
 def system_check():
-    return "The App is working"
+    return "The Application is working"
 
 @app.route('/zoho-calendar-sync', methods=['POST'])
 def zoho_calendar_sync():
