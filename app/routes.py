@@ -4,7 +4,7 @@ from app import app
 from app.services import get_calendar_id, get_credentials, save_credentials
 from app.utils import validate_and_sanitize_input, get_date_params
 from werkzeug.exceptions import BadRequest
-from git import Repo
+import git
 
 @app.route('/')
 def system_check():
