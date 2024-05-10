@@ -1,7 +1,4 @@
 <a name="readme-top"></a>
-
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
   <h3 align="center">Zoho and Google Calendar Sync</h3>
   <p align="center">
@@ -59,6 +56,7 @@ To get a local copy up and running follow these simple example steps.
 
 For the project to run you will need to have the following:
 1. Requires `credentials.json` file. [Follow here for details](#create-credentialsjson)
+2. Requires webhook that triggers when a leave is approved. 
 
 ### Installation
 
