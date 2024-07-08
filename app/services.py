@@ -1,9 +1,10 @@
 import os
-from google.auth.transport.requests import Request
+from pathlib import Path
+
+import google.auth.transport.requests
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
-from pathlib import Path
 from app import app
 
 PROSHORE_CALENDAR_ID = os.getenv("PROSHORE_CALENDAR_ID")
@@ -22,22 +23,27 @@ def get_calendar_id(source):
         'dpl': DPL_CALENDAR_ID,
     }.get(source, DEFAULT_CALENDAR_ID)
 
+
 def get_credentials():
     """Get the credentials for the Google Calendar API"""
     this_folder = Path(__file__).parent.parent.resolve()
-    creds = Credentials.from_authorized_user_file(this_folder / 'token.json', CALENDAR_SCOPE) if os.path.exists(this_folder / 'token.json') else None
-
+    creds = Credentials.from_authorized_user_file(this_folder / 'token.json', [CALENDAR_SCOPE]) if os.path.exists(
+        this_folder / 'token.json') else None
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
+            request = google.auth.transport.requests.Request()
+            creds.refresh(request)
+            save_credentials(creds)
 
     return creds
+
 
 def save_credentials(creds):
     """Save the credentials to the token.json file"""
     this_folder = Path(__file__).parent.parent.resolve()
     with open(this_folder / 'token.json', 'w') as token:
         token.write(creds.to_json())
+
 
 def get_authorization_url():
     """Get the authorization URL for generating the token"""
@@ -48,14 +54,16 @@ def get_authorization_url():
         include_granted_scopes='true')
     return authorization_url
 
+
 def save_token(request):
     """Save the generated token to the token.json file"""
     flow = InstalledAppFlow.from_client_secrets_file(
         CLIENT_SECRETS_FILE, CALENDAR_SCOPE, redirect_uri=REDIRECT_URI)
-    authorization_code =request.args.get('code')
+    authorization_code = request.args.get('code')
     flow.fetch_token(code=authorization_code)
     credentials = flow.credentials
     save_credentials(credentials)
+
 
 def create_calendar_event(firstname, lastname, leave_type, format_leaves_from, adjusted_end_date, calendar_id, creds):
     """Create a Google Calendar event"""
