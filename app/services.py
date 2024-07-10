@@ -5,6 +5,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from pathlib import Path
 from app import app
+import google.auth.transport.requests
 
 PROSHORE_CALENDAR_ID = os.getenv("PROSHORE_CALENDAR_ID")
 DPL_CALENDAR_ID = os.getenv("DPL_CALENDAR_ID")
@@ -25,11 +26,13 @@ def get_calendar_id(source):
 def get_credentials():
     """Get the credentials for the Google Calendar API"""
     this_folder = Path(__file__).parent.parent.resolve()
-    creds = Credentials.from_authorized_user_file(this_folder / 'token.json', CALENDAR_SCOPE) if os.path.exists(this_folder / 'token.json') else None
+    creds = Credentials.from_authorized_user_file(this_folder / 'token.json', [CALENDAR_SCOPE]) if os.path.exists(this_folder / 'token.json') else None
 
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
+            request = google.auth.transport.requests.Request()
+            creds.refresh(request)
+            save_credentials(creds)
 
     return creds
 
